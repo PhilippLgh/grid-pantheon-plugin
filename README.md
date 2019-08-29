@@ -3,8 +3,10 @@
 This plugin allows you to install and use [Pantheon](https://docs.pantheon.pegasys.tech/en/latest/) in [Ethereum Grid](http://grid.ethereum.org).
 
 # Screenshots
+## About Page
 ![about page](./assets/about_page.PNG)
 
+## Bintray Release List + Nano
 ![version list](./assets/pantheon_grid.png)
 
 
@@ -14,7 +16,7 @@ This plugin allows you to install and use [Pantheon](https://docs.pantheon.pegas
 
 ```
 
-# How to use
+# How to use 
 - [Download Grid](https://grid.ethereum.org/)
 - Run Grid
 - Click on settings icon
