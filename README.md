@@ -5,6 +5,9 @@ This plugin allows you to install and use [Pantheon](https://docs.pantheon.pegas
 # Screenshots
 ![about page](./assets/about_page.PNG)
 
+![version list](./assets/pantheon_grid.png)
+
+
 # Implementation
 `index.js`
 ```
@@ -21,6 +24,7 @@ This plugin allows you to install and use [Pantheon](https://docs.pantheon.pegas
 - Click Restart
 
 # Challenges
+see issues
 - Bintray support not fully implemented in [electron-app-manager](https://github.com/PhilippLgh/electron-app-manager) -> use github mirror
   - failing test https://github.com/PhilippLgh/electron-app-manager/commit/80bf84fdf99ec1dafec046fbac1cd811259a79d4#diff-e7bde8dfb0840fa786d7adbef653fc7aR14
   - run with `yarn test:downloader`
