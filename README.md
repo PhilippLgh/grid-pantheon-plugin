@@ -5,9 +5,9 @@ This plugin allows you to install and use [Pantheon](https://docs.pantheon.pegas
 # Progress
 
 - [x] Get releases from Bintray
-- [ ] Download packed Jar files from Bintray
+- [x] Download packed Jar files from Bintray
 - [ ] Verify Signature
-- [ ] Extract all Jar files
+- [x] Extract all Jar files
 - [x] Detect JDK (80% windows, 0% others)
 - [x] Install JDK with elevated process (windows)
 - [ ] Install JDK (others)
@@ -75,9 +75,8 @@ module.exports = {
 
 # Challenges / Issues
 see issues
-- Bintray support not fully implemented in [electron-app-manager](https://github.com/PhilippLgh/electron-app-manager) -> use github mirror
-  - failing test https://github.com/PhilippLgh/electron-app-manager/commit/80bf84fdf99ec1dafec046fbac1cd811259a79d4#diff-e7bde8dfb0840fa786d7adbef653fc7aR14
-  - run with `yarn test:downloader`
+- ~~Bintray support not fully implemented in [electron-app-manager](https://github.com/PhilippLgh/electron-app-manager) -> use github mirror~~
+  - ~~failing test https://github.com/PhilippLgh/electron-app-manager/commit/80bf84fdf99ec1dafec046fbac1cd811259a79d4#diff-e7bde8dfb0840fa786d7adbef653fc7aR14~~
   - has no `prefix` option for the api endpoint -> thousands of file entries need to be fetched & filtered client-side 
 - Pantheon GitHub releases contains only source
 - Couldn't find out the PGP public keys for the corresponsing `.asc` files
@@ -90,10 +89,10 @@ see issues
   - JDK installer does not set JAVA_HOME or PATH which is used for detection
   - download produced occasional `ECONNRESET`
   - user needs to agree / disagree license somehow
-- JRE (`jre-8u221-windows-x64.exe`) seems **not** to be working
-  - `Unrecognized option: --add-opens`
-- Grid is not handling the installation of a 32 bit or older JRE (https://docs.pantheon.pegasys.tech/en/latest/HowTo/Get-Started/Install-Binaries/)
-- All jar files / contents of package need to be extracted. Usually grid extracts only the executable **before every** start and does a signature check to avoid swapped executables
+- ~~JRE (`jre-8u221-windows-x64.exe`) seems **not** to be working~~
+  - ~~`Unrecognized option: --add-opens`~~
+- Grid is not handling the de-installation of a 32 bit or older JRE (https://docs.pantheon.pegasys.tech/en/latest/HowTo/Get-Started/Install-Binaries/)
+- ~~All jar files / contents of package need to be extracted. Usually grid extracts only the executable **before every** start and does a signature check to avoid swapped executables~~
 - Not sure if Grid should replicate the `bin/pantheon` script behavior e.g. start Java with flags etc or run scripts instead
   - Plugin needs to specify `classpath` setting in this case based on extraction location
   - Grid-UI should allow to configure JVM as well as Pantheon in this case "Add default JVM options here. You can also use JAVA_OPTS and PANTHEON_OPTS to pass JVM options to this [start] script."
