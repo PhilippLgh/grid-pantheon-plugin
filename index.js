@@ -5,7 +5,7 @@ module.exports = {
   repository: 'https://bintray.com/consensys/pegasys-repo/pantheon',
   filter: {
     name: {
-      excludes: ['.zip', 'snapshot']
+      excludes: ['.zip', 'snapshot'] // don't show zip files and snapshot files in version list
     }
   },
   dependencies: {
@@ -18,18 +18,20 @@ module.exports = {
     ]
     // clients: []
   },
+  unpack: true, // indicate that package contents should be extracted
   settings: [
+    // CONVENTION: VM must be first flag
     {
       id: 'java_path',
       label: 'Java Path',
       flag: '%s',
-      default: 'C:/Program Files/Java/jdk-12.0.2/bin/java.exe'
+      default: '%%JAVA%%' // let Grid resolve path to Java
     },
     {
       id: 'vertx_cp_resolver',
       label: 'Vert.x Classpath Resolver',
       docs: 'https://vertx.io/docs/vertx-core/ceylon/#_using_the_file_system_with_vert_x',
-      flag: '--Dvertx.disableFileCPResolving=%s',
+      flag: '-Dvertx.disableFileCPResolving=%s',
       group: 'DEFAULT_JVM_OPTS',
       default: 'true',
       required: true
@@ -40,7 +42,7 @@ module.exports = {
       type: 'directory',
       flag: '-Dpantheon.home=%s',
       group: 'DEFAULT_JVM_OPTS',
-      default: '%PACKAGE_PATH%/*'
+      default: '%PACKAGE_PATH/*%'
     },
     {
       id: 'log4j_shutdown',
@@ -63,9 +65,14 @@ module.exports = {
     {
       id: 'classpath',
       label: 'Classpath',
-      flag: '-classpath',
-      default: '%PACKAGE_PATH%/*/lib/\* tech.pegasys.pantheon.Pantheon',
-      hidden: true
+      flag: '-classpath %s',
+      default: '%PACKAGE_PATH/*%/lib/*',
+    },
+    {
+      id: 'classpath2',
+      label: 'Classpath 2',
+      flag: '%s',
+      default: 'tech.pegasys.pantheon.Pantheon',
     }
     // TODO allow this kind of settings:
     // execute "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %PANTHEON_OPTS%  -classpath "%CLASSPATH%" tech.pegasys.pantheon.Pantheon %CMD_LINE_ARGS%
