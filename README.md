@@ -1,6 +1,6 @@
-# Pantheon Grid Integration
+# Besu Grid Integration
 
-This plugin allows you to install and use [Pantheon](https://docs.pantheon.pegasys.tech/en/latest/) in [Ethereum Grid](http://grid.ethereum.org).
+This plugin allows you to install and use [Hyperledger Besu](https://besu.hyperledger.org/en/latest/) in [Ethereum Grid](https://grid.ethereum.org).
 
 # Progress
 
@@ -32,16 +32,16 @@ This plugin allows you to install and use [Pantheon](https://docs.pantheon.pegas
 `index.js`
 ```
 module.exports = {
-  name: 'pantheon',
-  displayName: 'Pantheon',
+  name: 'besu',
+  displayName: 'Besu',
   type: 'client',
-  // repository: 'https://bintray.com/consensys/pegasys-repo/pantheon', // ideally it would point to bintray package
-  repository: 'https://github.com/PhilippLgh/grid-pantheon-plugin', // github mirror while bintray not working
+  repository: 'https://bintray.com/hyperledger/besu-repo/besu',
   dependencies: {
     runtime: [ // new Grid API for runtime dependency
       {
-        name: 'Java', // JRE default
-        version: '8'
+        name: 'Java',
+        type: 'JDK',
+        version: '11'
       }
     ]
   },
@@ -50,22 +50,26 @@ module.exports = {
   ],
   about: {
     description: `
-    Pantheon is an open-source Ethereum client developed under the Apache 2.0 license and written in Java. It runs on the Ethereum public network, private networks, and test networks such as Rinkeby, Ropsten, and Görli. Pantheon implements Proof of Work (Ethash) and Proof of Authority (IBFT 2.0 and Clique) consensus mechanisms.
+    Hyperledger Besu is an open-source Ethereum client developed under the Apache 2.0 license and written in Java. It runs on the Ethereum public network, private networks, and test networks such as Rinkeby, Ropsten, and Görli. Pantheon implements Proof of Work (Ethash) and Proof of Authority (IBFT 2.0 and Clique) consensus mechanisms.
 
-    You can use Pantheon to develop enterprise applications requiring secure, high-performance transaction processing in a private network.
+    You can use Besu to develop enterprise applications requiring secure, high-performance transaction processing in a private network.
 
-    Pantheon supports enterprise features including privacy and permissioning.
+    Besu supports enterprise features including privacy and permissioning.
     `,
     links: [
       {
         name: 'GitHub Repository',
-        url: 'https://github.com/PegaSysEng/pantheon'
+        url: 'https://github.com/hyperledger/besu'
+      },
+      {
+        name: 'Project Tracker',
+        url: 'https://pegasys1.atlassian.net/secure/Dashboard.jspa?selectPageId=10117'
       }
     ],
     docs: [
       {
-        name: 'Pantheon Docs',
-        url: 'https://docs.pantheon.pegasys.tech/en/latest/'
+        name: 'Besu Docs',
+        url: 'https://besu.hyperledger.org/en/latest/'
       }
     ]
 

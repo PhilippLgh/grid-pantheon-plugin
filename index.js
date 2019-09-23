@@ -1,8 +1,8 @@
 module.exports = {
-  name: 'pantheon',
-  displayName: 'Pantheon',
+  name: 'besu',
+  displayName: 'Besu',
   type: 'client',
-  repository: 'https://bintray.com/consensys/pegasys-repo/pantheon',
+  repository: 'https://bintray.com/hyperledger/besu-repo/besu',
   filter: {
     name: {
       excludes: ['.zip', 'snapshot'] // don't show zip files and snapshot files in version list
@@ -37,10 +37,10 @@ module.exports = {
       required: true
     },
     {
-      id: 'pantheon_home',
-      label: 'Pantheon Home',
+      id: 'besu',
+      label: 'Besu Home',
       type: 'directory',
-      flag: '-Dpantheon.home=%s',
+      flag: '-Dbesu.home=%s',
       group: 'DEFAULT_JVM_OPTS',
       default: '%PACKAGE_PATH/*%'
     },
@@ -80,22 +80,26 @@ module.exports = {
   ],
   about: {
     description: `
-    Pantheon is an open-source Ethereum client developed under the Apache 2.0 license and written in Java. It runs on the Ethereum public network, private networks, and test networks such as Rinkeby, Ropsten, and Görli. Pantheon implements Proof of Work (Ethash) and Proof of Authority (IBFT 2.0 and Clique) consensus mechanisms.
+    Hyperledger Besu is an open-source Ethereum client developed under the Apache 2.0 license and written in Java. It runs on the Ethereum public network, private networks, and test networks such as Rinkeby, Ropsten, and Görli. Pantheon implements Proof of Work (Ethash) and Proof of Authority (IBFT 2.0 and Clique) consensus mechanisms.
 
-    You can use Pantheon to develop enterprise applications requiring secure, high-performance transaction processing in a private network.
+    You can use Besu to develop enterprise applications requiring secure, high-performance transaction processing in a private network.
 
-    Pantheon supports enterprise features including privacy and permissioning.
+    Besu supports enterprise features including privacy and permissioning.
     `,
     links: [
       {
         name: 'GitHub Repository',
-        url: 'https://github.com/PegaSysEng/pantheon'
+        url: 'https://github.com/hyperledger/besu'
+      },
+      {
+        name: 'Project Tracker',
+        url: 'https://pegasys1.atlassian.net/secure/Dashboard.jspa?selectPageId=10117'
       }
     ],
     docs: [
       {
-        name: 'Pantheon Docs',
-        url: 'https://docs.pantheon.pegasys.tech/en/latest/'
+        name: 'Besu Docs',
+        url: 'https://besu.hyperledger.org/en/latest/'
       }
     ]
     // gitter https://gitter.im/PegaSysEng/pantheon 
